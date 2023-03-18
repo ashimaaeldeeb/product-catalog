@@ -1,36 +1,13 @@
 import React from "react";
-import { NavigationContainer } from "@react-navigation/native";
-import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import { Products, ProductDetails } from "./screens";
+import { QueryClient, QueryClientProvider } from "react-query";
+import AppNavigation from "./navigation/AppNavigation";
 
-const appScreens = {
-  Products: {
-    screen: Products,
-  },
-  ProductDetails: {
-    screen: ProductDetails,
-  },
-};
-
-const Stack = createNativeStackNavigator();
-
-const ScreensStack = (
-  <Stack.Navigator
-    initialRouteName="AppInitializerScreen"
-    screenOptions={{
-      headerShown: false,
-      gestureEnabled: false,
-      presentation: "transparentModal",
-    }}
-  >
-    {Object.keys(appScreens).map((key) => {
-      const screen = appScreens[key];
-      const { screen: component } = screen;
-      return <Stack.Screen key={key} name={key} component={component} />;
-    })}
-  </Stack.Navigator>
-);
+const queryClient = new QueryClient();
 
 export default function App() {
-  return <NavigationContainer>{ScreensStack}</NavigationContainer>;
+  return (
+    <QueryClientProvider client={queryClient}>
+      <AppNavigation />
+    </QueryClientProvider>
+  );
 }

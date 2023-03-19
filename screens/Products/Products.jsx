@@ -29,7 +29,7 @@ export default function Products() {
   return (
     <Screen title="Clothing">
       {isLoading ? (
-        <> </>
+        <></>
       ) : (
         <>
           {/* list of categories   */}

@@ -13,7 +13,6 @@ export default function ProductDetails({ route }) {
         <Text fontSize={19} color={colors.dark_purple} lineHeight={23}>
           {selectedProduct.description}
         </Text>
-
         <Text mt={8} bold fontSize={"2xl"} color={colors.dark_purple}>
           ${selectedProduct.price}
         </Text>

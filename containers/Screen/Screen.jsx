@@ -1,7 +1,7 @@
 import React from "react";
 import BottomBar from "../BottomBar/BottomBar";
 import ScreenHeader from "../../components/ScreenHeader";
-import { NativeBaseProvider, Stack } from "native-base";
+import { NativeBaseProvider } from "native-base";
 
 export default function Screen({
   title,

@@ -1,9 +1,14 @@
-import React, { useState } from "react";
+import React from "react";
 import { Stack, FlatList } from "native-base";
 import CategoryListItem from "../../components/CategoryListItem";
+import { useSelector, useDispatch } from "react-redux";
+import { setSelectedCategory } from "../../redux/category/categoriesSlice";
+import { categorySelector } from "../../redux/category/categoriesSelectors";
 
 export default function CategoryList({ categories }) {
-  const [selectedCat, setSelectedCat] = useState(categories[0]);
+  const dispatch = useDispatch();
+  const selectedCategory = useSelector(categorySelector);
+
   return (
     <Stack mt={5}>
       <FlatList
@@ -13,9 +18,9 @@ export default function CategoryList({ categories }) {
         renderItem={({ item }) => (
           <CategoryListItem
             category={item}
-            selectedCat={selectedCat === item}
+            selectedCat={selectedCategory === item}
             onSelectCat={() => {
-              setSelectedCat(item);
+              dispatch(setSelectedCategory(item));
             }}
           />
         )}

@@ -1,6 +1,6 @@
-export const selectCategoriesName = (categories) => {
-  const catsName = categories?.map(function (item) {
-    return item["name"];
-  });
-  return ["All", ...catsName];
+import { all } from "./constants";
+
+export const filterProducts = (products, category) => {
+  if (category === all) return products;
+  return products.filter((product) => product.category === category);
 };

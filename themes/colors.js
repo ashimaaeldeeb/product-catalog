@@ -5,4 +5,5 @@ export default {
   light_purple: "#845FA1",
   dark_purple: "#34283E",
   yellow: "#E7B944",
+  bg: "#F4F3F4",
 };

@@ -4,9 +4,9 @@ import Icon from "../Icon/Icon";
 import colors from "../../themes/colors";
 import images from "../../themes/images";
 
-export default function FavButton({ isFav }) {
+export default function FavButton({ isFav, onButtonPress }) {
   return (
-    <Pressable>
+    <Pressable onPress={onButtonPress}>
       <Box
         shadow={1}
         bgColor={colors.white}

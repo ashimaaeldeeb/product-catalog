@@ -1,9 +1,10 @@
-import { View, Text, Pressable } from "react-native";
-import React from "react";
+import { View } from "react-native";
+import { useSelector } from "react-redux";
+import React, { useState } from "react";
 import styles from "./BottomBar.styles.js";
 import BottomBarItem from "../../components/BottomBarItem/BottomBarItem.jsx";
 import images from "../../themes/images.js";
-
+import { selectFavProductsCount } from "../../redux/product/productSelector.js";
 const items = [
   { icon: images.ic_home, text: "Home" },
   { icon: images.ic_catalogue, text: "Catalogue" },
@@ -12,7 +13,8 @@ const items = [
 ];
 
 const BottomBar = () => {
-  const [selected] = React.useState(1);
+  const [selected] = useState(1);
+  const favProductsCount = useSelector(selectFavProductsCount);
 
   return (
     <View style={styles.bottomBarContainer}>
@@ -24,6 +26,7 @@ const BottomBar = () => {
               icon={item.icon}
               text={item.text}
               isSelected={index === selected}
+              count={item.text === "Favorite" ? favProductsCount : 0}
             />
           );
         })}

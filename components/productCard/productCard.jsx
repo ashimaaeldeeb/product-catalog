@@ -1,14 +1,17 @@
-import { View } from "react-native";
 import React from "react";
-import { Box, Container, Image, Pressable, Text } from "native-base";
+
+import { Box, Container, Image, Pressable } from "native-base";
 import colors from "../../themes/colors";
 import { imageSize } from "../../Utils/constants";
-import Icon from "../Icon/Icon";
-import images from "../../themes/images";
 import FavButton from "../FavButton/FavButton";
 import ProductCardDescription from "../ProductCardDescription/ProductCardDescription";
 
-export default function productCard({ product, navigation }) {
+export default function productCard({
+  product,
+  navigation,
+  isFav,
+  onFavButtonPress,
+}) {
   return (
     <Container
       style={{
@@ -35,7 +38,7 @@ export default function productCard({ product, navigation }) {
             backgroundColor={colors.white}
           />
         </Pressable>
-        <FavButton isFav />
+        <FavButton isFav={isFav} onButtonPress={onFavButtonPress} />
         <ProductCardDescription product={product} />
       </Box>
     </Container>

@@ -2,10 +2,20 @@
 
 Simple Product Catalog Mobile App
 
-# to run android
+# Run application
 
-npm run android
+```bash
+$npm install
+```
 
-# to run ios
+Now build and run ios app
 
-npm run ios
+```bash
+$npm  run ios
+```
+
+Or build and run android app
+
+```bash
+$npm run android
+```

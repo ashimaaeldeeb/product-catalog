@@ -2,6 +2,7 @@ import React from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { ProductDetails, Products } from "../screens";
+import { navigationRef } from "./RootNavigation";
 
 const appScreens = {
   Products: {
@@ -31,5 +32,9 @@ const ScreensStack = (
 );
 
 export default function AppNavigation() {
-  return <NavigationContainer>{ScreensStack}</NavigationContainer>;
+  return (
+    <NavigationContainer ref={navigationRef}>
+      {ScreensStack}
+    </NavigationContainer>
+  );
 }

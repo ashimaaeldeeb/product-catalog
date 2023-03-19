@@ -5,13 +5,9 @@ import colors from "../../themes/colors";
 import { imageSize } from "../../Utils/constants";
 import FavButton from "../FavButton/FavButton";
 import ProductCardDescription from "../ProductCardDescription/ProductCardDescription";
+import * as navigation from "../../navigation/RootNavigation";
 
-export default function productCard({
-  product,
-  navigation,
-  isFav,
-  onFavButtonPress,
-}) {
+export default function productCard({ product, isFav, onFavButtonPress }) {
   return (
     <Container
       style={{

@@ -1,9 +1,10 @@
 import React from "react";
 import { Box, Text } from "native-base";
-import Screen from "../../containers/Screen/Screen";
+import { Screen } from "../../containers";
 import colors from "../../themes/colors";
+import * as navigation from "../../navigation/RootNavigation";
 
-export default function ProductDetails({ navigation, route }) {
+export default function ProductDetails({ route }) {
   const selectedProduct = route.params.product;
 
   return (

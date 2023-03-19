@@ -6,7 +6,7 @@ import styles from "./ProductsList.styles";
 import { selectFavProducts } from "../../redux/product/productSelector";
 import { toggleFavProduct } from "../../redux/product/productSlice";
 
-export default function ProductsList({ products, navigation }) {
+export default function ProductsList({ products }) {
   const selectedFavProducts = useSelector(selectFavProducts);
   const dispatch = useDispatch();
 
@@ -19,7 +19,6 @@ export default function ProductsList({ products, navigation }) {
           <ProductCard
             key={item.id}
             product={item}
-            navigation={navigation}
             isFav={selectedFavProducts?.includes(item.id)}
             onFavButtonPress={() => dispatch(toggleFavProduct(item.id))}
           />

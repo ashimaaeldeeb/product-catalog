@@ -16,7 +16,7 @@ const Stack = createNativeStackNavigator();
 
 const ScreensStack = (
   <Stack.Navigator
-    initialRouteName="AppInitializerScreen"
+    initialRouteName="Products"
     screenOptions={{
       headerShown: false,
       gestureEnabled: false,
